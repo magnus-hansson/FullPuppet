@@ -14,5 +14,8 @@ module.exports = function router(app)
   app.use(route.post('/todo/update', require('./routes/update')));
   
   //Set my routes
-  app.use(route.get('/athletes', require('./routes/athletes/list')));
+  app.use(route.get('/athletes', require('./routes/athletes/athleteRoutes').get));
+  app.use(route.get('/athletes/:id', require('./routes/athletes/athleteRoutes').get));
+  app.use(route.post('/athletes', require('./routes/athletes/athleteRoutes').post));
+  
 };
