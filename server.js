@@ -12,7 +12,7 @@ var router = require('./api/router');
 var error = require('./api/lib/error');
 
 // Create koa app
-var app = koa();
+var app = module.exports = koa();
 
 // Koa middleware
 app.use(error());
