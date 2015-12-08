@@ -1,11 +1,11 @@
 // Dependencies
-var http        = require('http')
-  , koa         = require('koa')
-  , views       = require('koa-views')
-  , logger      = require('koa-logger')
-  , serve       = require('koa-static')
-  , stylus      = require('koa-stylus')
-  , bodyParser  = require('koa-bodyparser');
+var http = require('http')
+  , koa = require('koa')
+  , views = require('koa-views')
+  , logger = require('koa-logger')
+  , serve = require('koa-static')
+  , stylus = require('koa-stylus')
+  , bodyParser = require('koa-bodyparser');
 
 // Custom Koa middleware
 var router = require('./api/router');
@@ -22,7 +22,8 @@ app.use(serve('./public'));
 app.use(stylus('./public'));
 
 // Views middleware
-app.use(views('views', {map:{html:'swig'}}));
+app.use(views('views', { map: { html: 'swig' } }));
+
 
 // Define routes
 router(app);
