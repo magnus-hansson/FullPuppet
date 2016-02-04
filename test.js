@@ -8,7 +8,10 @@ describe('Our application', function () {
         request
             .get('/')
             .expect(200)
-            //.expect(/Find the APIs under/)
+            .expect(function(res) {
+        		res.body = 'Welcome to API v1, available routes is get /athletes/{?id} and post athletes';
+        		
+      		})
             .end(done);
     });
 });
